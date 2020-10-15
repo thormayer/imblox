@@ -1,0 +1,32 @@
+<div class="wrapper">   
+    <div class="register" (click)="onRegisterClicked()">Add new user</div>
+    <div class="container">
+    
+        <div class="nav-container">
+            <div class="greeting" (click)="onSwitchUser()">
+                
+                Welcome, <span *ngIf="currentUser">{{currentUser.name}}</span> 
+            </div>
+
+            <div class="user-list-container" >
+                <button class="chat-action-button" *ngIf="currentRoom && !!isCurrentUserInRoom()" mat-raised-button color="warn" (click)="onExitRoomClicked()">EXIT ROOM</button>
+                <button class="chat-action-button" *ngIf="currentRoom &&  !isCurrentUserInRoom()" mat-raised-button color="accent" (click)="onJoinRoomClicked()">JOIN ROOM</button>
+                <span *ngIf="currentRoom">{{currentUserList.users.length}} online users right now in this room.</span> 
+            </div>
+        </div>
+        <div class="chat-container">
+    
+            <room-list [rooms]="rooms" (onRoomSelected)="onRoomSelected($event)"></room-list>
+            <conversation 
+                [messages]="roomConversation" 
+                [currentUser]="currentUser"
+                (onMessageSent)="onMessageSent($event)"
+                [currentUserList]="currentUserList"
+
+                ></conversation>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,14 @@
+<div class="container">
+
+
+    <button mat-raised-button color="primary" (click)="onAddRoomClicked()">ADD ROOM</button>
+
+    <room-list-item  
+        *ngFor="let room of rooms; let i = index;" 
+        [room]="room"
+        [isSelected]="room.id === currentRoom.id"
+        (click)="onRoomClicked(room)"
+        >
+    </room-list-item>
+
+</div>

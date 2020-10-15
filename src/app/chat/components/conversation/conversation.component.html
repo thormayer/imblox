@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="message-container" #scrollDown *ngIf="currentUser">
+
+            <message-item 
+                *ngFor="let message of messages.text" 
+                [message]="message"
+                [isOwnMessage]="message.userId === currentUser.id" 
+                
+            ></message-item>
+        </div>
+        
+        <div class="send-message-container" *ngIf="isCurrentUserInRoom()">
+            
+            <input 
+                type="text" 
+                class="input-text" 
+                (keyup)="onInputPress($event)" 
+                #textInput 
+            />
+
+            <button mat-mini-fab color="primary" (click)="onSendMessageClicked()">
+                <mat-icon>send</mat-icon>
+            </button>
+           
+        </div>
+    </div>
+</div>
+

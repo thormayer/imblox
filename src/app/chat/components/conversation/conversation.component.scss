@@ -1,0 +1,52 @@
+.wrapper    {
+    display: flex;
+    height: 100%;
+    .container {
+        flex: 1;
+        position: relative;
+        .message-container{
+            overflow-y: auto;
+            height: 80vh;
+        }
+        .send-message-container{
+            position: absolute;
+            bottom: 0;
+            background-color: #e0e0e0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                margin: 10px;
+                // background-color: #aed581;
+
+            }
+            // .button {
+            //     width: 30px;
+            //     height: 30px;
+            //     border-radius: 50%;
+            //     background-color: #7cb342;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     margin: 15px;
+            //     cursor: pointer;
+            //     mat-icon{
+            //         color: white;
+            //     }
+            // }
+
+            .input-text{
+                padding: 5px;
+                margin: 8px;
+                background-color: white;
+                border-radius: 50px;
+                border: 0px;
+                width: 90%;
+                height: 32px;
+                font-size: 18px;
+                outline: none;
+            }
+        }
+    }
+}

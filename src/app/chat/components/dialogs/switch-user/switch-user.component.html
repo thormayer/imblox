@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Hi There</h1>
+<div mat-dialog-content>
+  <p>Please choose a user</p>
+
+  
+  <div class="user-container">
+      <room-list-item *ngFor="let user of userList" [room]="user" (click)="onUserSelected(user.id)" [isSelected]="user.id === currentSelection"></room-list-item>
+  </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] (click)="onOkClicked()" cdkFocusInitial>Ok</button>
+</div>

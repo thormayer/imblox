@@ -1,0 +1,57 @@
+
+.container{
+
+    margin: 50px;
+    float: left;
+
+    .speech-bubble {
+        position: relative;
+        background: #dcedc8;
+        border-radius: .4em;
+        width: 300px;
+        padding: 10px;
+        
+        border-bottom: 2px solid #d6d6d6;
+    }
+    
+    .speech-bubble:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-right-color: #dcedc8;
+        border-left: 0;
+        border-top: 0;
+        margin-top: -17px;
+        margin-left: -15px;
+        
+
+    }
+
+    &.own{
+        float: right;
+        .speech-bubble{
+            background: #b2ebf2;
+
+
+        }
+
+        .speech-bubble:after{
+            border-right-color: #b2ebf2;
+            left: unset;
+            right: 0;
+            border-left: unset;
+            border-right: 0;
+            margin-left: unset;
+            margin-right: -15px;
+
+        }
+    }
+}
+
+.clear{
+    clear: both;
+}
